@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome page</title>
+</head>
+<body>
+
+    {{sam}}
+
+    <h2>This is emp registration page..!</h2>
+
+
+    {{msg}}
+    <form action="http://localhost:5000/employee/save/" method="post">
+        EmpId : <input type="text" name="eid"> <br><br>
+        EmpName : <input type="text" name="enm"> <br><br>
+        EmpAge : <input type="text" name="eage"> <br><br>
+        EmpSal : <input type="text" name="esal"> <br><br>
+        EmpAddress : <input type="text" name="eadr"> <br><br>
+        EmpPosition : <input type="text" name="epos"> <br><br>
+        <input type="submit">
+    </form>
+
+    <table border="1">
+            <thead>
+                <th>EmpId</th><th>EmpName</th><th>EmpAge</th><th>EmpSal</th><th>EmpAddress</th>
+                <th>EmpDesi</th>
+            </thead>
+        {% for emp in emps %}
+            <tbody>
+                    <td>{{emp.empId}}</td>
+            <td>{{emp.empName}}</td>
+            <td>{{emp.empAge}}</td>
+            <td>{{emp.empSal}}</td>
+            <td>{{emp.empadr}}</td>
+            <td>{{emp.empdes}}</td>
+
+            </tbody>
+    {% endfor %}
+    </table>
+
+</body>
+</html>
